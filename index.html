@@ -3,303 +3,48 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hamza Ariz | Portfolio Futuriste</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet" />
-<style>
-  /* Reset */
-  *, *::before, *::after {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
-    color: #0ff;
-    min-height: 100vh;
-    transition: background 0.5s, color 0.5s;
-  }
-  /* Dark mode toggle styles */
-  body.dark {
-    background: linear-gradient(135deg, #111 0%, #222244 100%);
-    color: #0f0;
-  }
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(15,15,26,0.95);
-    border-bottom: 2px solid #0ff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-  }
-  header h1 {
-    font-family: 'Orbitron', monospace;
-    letter-spacing: 0.25em;
-    font-size: 1.8rem;
-  }
-  nav {
-    display: flex;
-    gap: 1.5rem;
-  }
-  nav a {
-    color: #0ff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    position: relative;
-    padding-bottom: 2px;
-  }
-  nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
-    height: 2px;
-    background: #0ff;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-  nav a:hover::after, nav a.active::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  main {
-    padding: 8rem 2rem 3rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  section {
-    margin-bottom: 5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-  }
-  section.visible {
-    animation-name: fadeInUp;
-  }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  h2 {
-    font-family: 'Orbitron', monospace;
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    border-left: 5px solid #0ff;
-    padding-left: 10px;
-  }
-  p, ul {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #aaf;
-  }
-  ul li {
-    margin-bottom: 0.5rem;
-  }
-  a {
-    color: #0ff;
-    transition: color 0.3s ease;
-  }
-  a:hover {
-    color: #0f0;
-  }
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #066;
-    font-size: 0.9rem;
-  }
-  /* Dark mode toggle button */
-  #darkToggle {
-    background: none;
-    border: 2px solid #0ff;
-    border-radius: 5px;
-    color: #0ff;
-    padding: 0.25rem 0.6rem;
-    cursor: pointer;
-    font-family: 'Orbitron', monospace;
-    font-weight: 700;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  #darkToggle:hover {
-    background: #0ff;
-    color: #111;
-  }
-  /* Hamburger menu for mobile */
-  #menuToggle {
-    display: none;
-  }
-  #menuIcon {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-  }
-  #menuIcon span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #0ff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  /* Responsive */
-  @media (max-width: 720px) {
-    nav {
-      position: fixed;
-      top: 60px;
-      right: 0;
-      background: #111a;
-      flex-direction: column;
-      width: 200px;
-      height: calc(100% - 60px);
-      padding: 1rem;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      border-left: 1px solid #0ff;
-    }
-    nav.show {
-      transform: translateX(0);
-    }
-    nav a {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-    #menuIcon {
-      display: flex;
-    }
-    #menuToggle:checked + nav {
-      transform: translateX(0);
-    }
-    /* Animate hamburger to X */
-    #menuToggle:checked + nav + label #bar1 {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    #menuToggle:checked + nav + label #bar2 {
-      opacity: 0;
-    }
-    #menuToggle:checked + nav + label #bar3 {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-  }
-</style>
+<title>Hamza Ariz | Accueil</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <header>
-  <h1>HAMZA ARIZ</h1>
-
-  <input type="checkbox" id="menuToggle" />
-  <nav id="navMenu">
-    <a href="#about" class="active">À propos</a>
-    <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
-    <a href="#internship">Stage</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <label for="menuToggle" id="menuIcon" aria-label="Toggle menu">
-    <span id="bar1"></span>
-    <span id="bar2"></span>
-    <span id="bar3"></span>
-  </label>
-
-  <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+  <div class="container">
+    <h1 id="logo" class="glitch" data-text="HAMZA ARIZ">HAMZA ARIZ</h1>
+    <input type="checkbox" id="menuToggle" aria-label="Toggle navigation menu" />
+    <nav id="navMenu">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projects.html">Projets</a>
+      <a href="internship.html">Stage</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <label for="menuToggle" id="menuIcon" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
 </header>
 
 <main>
-  <section id="about" class="visible">
-    <h2>À propos de moi</h2>
-    <p>Étudiant BTS SIO SISR passionné par l’infrastructure et la cybersécurité. J’aime créer des solutions techniques fiables, sécurisées, et innovantes.</p>
+  <section class="hero" id="hero">
+    <div class="hero-content container">
+      <h2>Étudiant BTS SIO SISR</h2>
+      <p>Passionné par l’infrastructure, la cybersécurité et le hacking éthique.</p>
+      <a href="about.html" class="btn neon-btn">En savoir plus</a>
+    </div>
   </section>
-
-  <section id="skills">
-    <h2>Compétences techniques</h2>
-    <ul>
-      <li>Administration Windows Server & Linux (Ubuntu, Debian)</li>
-      <li>Réseaux : TCP/IP, VLAN, Cisco, DNS, DHCP</li>
-      <li>Virtualisation : VMware, Hyper-V, VirtualBox</li>
-      <li>Sécurité informatique : Firewall, gestion des droits, sauvegardes</li>
-      <li>Scripting : Bash, PowerShell</li>
-      <li>Outils : Wireshark, GLPI, Active Directory</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projets réalisés</h2>
-    <ul>
-      <li><strong>Déploiement d’un serveur Windows Server 2022</strong> avec Active Directory, DNS et DHCP.</li>
-      <li><strong>Simulation de réseau complexe</strong> avec VLANs et routage via Cisco Packet Tracer & GNS3.</li>
-      <li><strong>Sécurisation d’un réseau</strong> pour un laboratoire de mathématiques en stage.</li>
-    </ul>
-  </section>
-
-  <section id="internship">
-    <h2>Stage en laboratoire de mathématiques</h2>
-    <p>Participation à la maintenance informatique, support utilisateur et sécurisation des accès réseau dans un laboratoire de mathématiques.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:hamza.ariz@example.com">hamza.ariz@example.com</a></p>
-    <p>GitHub : <a href="https://github.com/hamzarizou" target="_blank">github.com/hamzarizou</a></p>
-    <p>LinkedIn : <a href="https://linkedin.com/in/hamza-ariz" target="_blank">linkedin.com/in/hamza-ariz</a></p>
+  <section class="intro container">
+    <h3>Bienvenue sur mon portfolio</h3>
+    <p>Découvrez mes projets, mon expérience et mes compétences dans le domaine de l'informatique et de la cybersécurité.</p>
   </section>
 </main>
 
-<footer>© 2025 Hamza Ariz - BTS SIO SISR</footer>
+<footer>
+  <p>© 2025 Hamza Ariz — Portfolio BTS SIO SISR</p>
+</footer>
 
-<script>
-  // Dark mode toggle
-  const darkToggle = document.getElementById('darkToggle');
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-  });
-
-  // Scroll reveal animations
-  const sections = document.querySelectorAll('main section');
-  const options = {
-    threshold: 0.1
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, options);
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-
-  // Navigation active link switch on scroll
-  const navLinks = document.querySelectorAll('nav a');
-  window.addEventListener('scroll', () => {
-    let fromTop = window.scrollY + 100;
-    navLinks.forEach(link => {
-      let section = document.querySelector(link.hash);
-      if(section.offsetTop <= fromTop && (section.offsetTop + section.offsetHeight) > fromTop) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Close mobile menu on click nav link
-  const menuToggle = document.getElementById('menuToggle');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if(menuToggle.checked) menuToggle.checked = false;
-    });
-  });
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
