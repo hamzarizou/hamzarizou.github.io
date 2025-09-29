@@ -1,69 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hamza Aarizou - Portfolio BTS SIO SISR</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hamza Ariz | Portfolio Futuriste</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0; 
+    background: #0f0f1a; 
+    color: #0ff; 
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #0ff;
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;}
+    to {text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;}
+  }
+  main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #0ff2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+  }
+  section:nth-child(1) {animation-delay: 0.2s;}
+  section:nth-child(2) {animation-delay: 0.4s;}
+  section:nth-child(3) {animation-delay: 0.6s;}
+  section:nth-child(4) {animation-delay: 0.8s;}
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0ff;
+    letter-spacing: 0.1em;
+  }
+  p, ul {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  ul li {
+    margin: 0.5rem 0;
+  }
+  a {
+    color: #0ff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+  }
+  a:hover {
+    border-bottom: 1px solid #0ff;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Hamza Aarizou</h1>
-        <p class="subtitle">Étudiant BTS SIO SISR passionné par l’infra & la cybersécurité</p>
-        <nav>
-            <a href="#about">À propos</a>
-            <a href="#skills">Compétences</a>
-            <a href="#projects">Projets</a>
-            <a href="#internship">Stage</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="about">
-            <h2>À propos de moi</h2>
-            <p>Je suis étudiant en BTS Services Informatiques aux Organisations, option SISR. Passionné par les infrastructures réseau et la cybersécurité, je souhaite développer mes compétences pratiques et théoriques à travers des projets et stages.</p>
-        </section>
-
-        <section id="skills">
-            <h2>Compétences techniques</h2>
-            <ul>
-                <li>Administration systèmes : Windows Server, Linux (Ubuntu, Debian)</li>
-                <li>Réseaux : TCP/IP, VLAN, DHCP, DNS, Cisco (Packet Tracer, GNS3)</li>
-                <li>Virtualisation : VMware, VirtualBox, Hyper-V</li>
-                <li>Sécurité informatique : pare-feu, gestion des droits, sauvegardes</li>
-                <li>Scripting : Bash, PowerShell</li>
-                <li>Outils : Wireshark, GLPI, Active Directory</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Projets réalisés</h2>
-            <article>
-                <h3>Déploiement d’un serveur Windows avec Active Directory</h3>
-                <p>Mise en place d’un serveur Windows Server 2022 avec services AD, DNS et DHCP pour gérer un réseau d’entreprise fictive.</p>
-            </article>
-            <article>
-                <h3>Simulation de réseau avec GNS3</h3>
-                <p>Création et configuration d’un réseau avec plusieurs VLANs, routage et gestion des accès via Cisco Packet Tracer et GNS3.</p>
-            </article>
-        </section>
-
-        <section id="internship">
-            <h2>Stage en laboratoire de mathématiques</h2>
-            <p>Stage effectué dans un laboratoire de mathématiques où j’ai assisté à la mise en place et maintenance du parc informatique, assuré le support utilisateur et participé à la sécurisation des accès réseau.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email : <a href="mailto:hamza.ariz@example.com">hamza.ariz@example.com</a></p>
-            <p>GitHub : <a href="https://github.com/hamzarizou" target="_blank">github.com/hamzarizou</a></p>
-            <p>LinkedIn : <a href="https://www.linkedin.com/in/hamza-ariz" target="_blank">linkedin.com/in/hamza-ariz</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Hamza Ariz - BTS SIO SISR</p>
-    </footer>
+<header>HAMZA ARIZ</header>
+<main>
+  <section>
+    <h2>À propos</h2>
+    <p>Étudiant BTS SIO SISR passionné par l’infrastructure et la cybersécurité, je crée des solutions innovantes avec un goût prononcé pour les technologies de pointe.</p>
+  </section>
+  <section>
+    <h2>Compétences</h2>
+    <ul>
+      <li>Windows Server & Linux</li>
+      <li>Réseaux TCP/IP, VLAN, Cisco</li>
+      <li>Virtualisation : VMware, Hyper-V</li>
+      <li>Scripting : Bash & PowerShell</li>
+      <li>Cybersécurité : pare-feu, gestion des droits</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Projets</h2>
+    <p>Déploiement de serveurs AD, simulation de réseaux avec GNS3, sécurisation d’infrastructures réseaux pour un labo de maths.</p>
+  </section>
+  <section>
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:hamza.ariz@example.com">hamza.ariz@example.com</a></p>
+    <p>GitHub : <a href="https://github.com/hamzarizou" target="_blank">hamzarizou</a></p>
+    <p>LinkedIn : <a href="https://linkedin.com/in/hamza-ariz" target="_blank">hamza-ariz</a></p>
+  </section>
+</main>
 </body>
 </html>
